@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AdressBookConsole.Models;
 
 namespace AdressBookConsole.Interfaces
 {
-    internal class IFileService
+    public interface IFileService
     {
+        List<Contact> ReadFromFile(string fileName);
+        void WriteToFile(string fileName, List<Contact> data);
     }
 }

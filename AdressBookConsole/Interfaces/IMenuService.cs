@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AdressBookConsole.Interfaces
+﻿namespace AdressBookConsole.Interfaces
 {
-    internal class IMenuService
+    public interface IMenuService
     {
+        void ShowMainMenu();
     }
 }

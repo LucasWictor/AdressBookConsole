@@ -1,12 +1,14 @@
-﻿using System;
+﻿using AdressBookConsole.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AdressBookConsole.Interfaces
 {
-    internal class IContactRepository
+    public interface IContactRepository
     {
+        List<Contact> GetAllContacts();
+        Contact GetContactByEmail(string email);
+        void AddContact(Contact contact);
+        void RemoveContact(string email);
+        void SaveContactsToFile();
     }
 }
