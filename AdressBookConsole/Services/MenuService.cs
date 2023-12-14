@@ -8,16 +8,23 @@ namespace AdressBookConsole.Services
     {
         private readonly IContactRepository _contactRepository;
 
+        /// <summary>
+        /// Constructor to initialize MenuService with a contact repository.
+        /// </summary>
+
         public MenuService(IContactRepository contactRepository)
         {
             _contactRepository = contactRepository;
         }
 
+        /// <summary>
+        /// Displays the main menu and handles user choices.
+        /// </summary>
         public void ShowMainMenu()
         {
             while (true)
-            {
-                Console.WriteLine("\nChoose an option:");
+            { Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("Choose an option:\n");
                 Console.WriteLine("1. Add a contact");
                 Console.WriteLine("2. Remove a contact");
                 Console.WriteLine("3. View all contacts");
@@ -48,9 +55,12 @@ namespace AdressBookConsole.Services
                 Console.Clear();
             }
         }
-
+        /// <summary>
+        /// Adds a new contact with user-inputted information.
+        /// </summary>
         private void AddContact()
         {
+
             Console.Write("Enter the name: ");
             string name = Console.ReadLine();
 
@@ -63,22 +73,26 @@ namespace AdressBookConsole.Services
             Console.Write("Enter the address : ");
             string address = Console.ReadLine();
 
-
+            // Adding contact to the repository
             _contactRepository.AddContact(new Contact { FirstName = name, Email = email, PhoneNumber = phone, Address = address });
 
             Console.WriteLine("Contact added successfully!");
         }
-
+        /// <summary>
+        /// Removes a contact based on the user-inputted email.
+        /// </summary>
         private void RemoveContact()
         {
             Console.Write("Enter the email of the contact to remove: ");
             string email = Console.ReadLine();
-
+            // Removing contact from the repository
             _contactRepository.RemoveContact(email);
 
             Console.WriteLine("Contact removed successfully!");
         }
-
+        /// <summary>
+        /// Displays all contacts or a message if there are none.
+        /// </summary>
         private void ViewAllContacts()
         {
            

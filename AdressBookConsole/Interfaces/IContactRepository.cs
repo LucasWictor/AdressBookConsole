@@ -1,5 +1,4 @@
 ﻿using AdressBookConsole.Models;
-using System.Collections.Generic;
 
 namespace AdressBookConsole.Interfaces
 {

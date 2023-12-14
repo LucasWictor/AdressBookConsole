@@ -1,22 +1,24 @@
 ﻿using AdressBookConsole.Interfaces;
 using AdressBookConsole.Models;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
+
 
 namespace AdressBookConsole.Services
 {
     public class FileService : IFileService
     {
         private readonly string _filePath;
-
+        /// <summary>
+        /// Constructor for FileService, specifying the file path.
+        /// </summary>
         public FileService(string filePath)
         {
             _filePath = filePath;
         }
-
+        /// <summary>
+        /// Writes contact data to a file using JSON serialization.
+        /// </summary>
         public void WriteToFile(string fileName, List<Contact> data)
         {
             try
@@ -29,7 +31,9 @@ namespace AdressBookConsole.Services
                 Debug.WriteLine($"Error writing to file: {ex.Message}");
             }
         }
-
+        /// <summary>
+        /// Reads contact data from a file using JSON deserialization.
+        /// </summary>
         public List<Contact> ReadFromFile(string fileName)
         {
             try
