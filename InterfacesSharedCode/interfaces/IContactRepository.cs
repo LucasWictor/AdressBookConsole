@@ -1,6 +1,7 @@
-﻿using AdressBookConsole.Models;
+﻿using System.Collections.Generic;
+using SharedCode.Models;
 
-namespace AdressBookConsole.Interfaces
+namespace InterfacesSharedCode.interfaces
 {
     public interface IContactRepository
     {

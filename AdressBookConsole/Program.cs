@@ -1,12 +1,23 @@
-﻿using AdressBookConsole.Interfaces;
-using AdressBookConsole.Services;
+﻿using SharedCode;
+using AddressBookConsole.Services;
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        AdressBookConsole.Interfaces.IServiceProvider serviceProvider = new ServiceProvider();
-        AdressBookConsole.Interfaces.IMenuService menuService = serviceProvider.GetMenuService();
+        
+        string filePath = @"C:\Path\To\File.json";
+
+        
+        SharedCode.IServiceProvider serviceProvider = new SharedCode.ServiceProvider(new FileService(filePath));
+
+        
+        IContactRepository contactRepository = serviceProvider.GetContactRepository();
+
+       
+        MenuService menuService = new MenuService(contactRepository);
+
+     
         menuService.ShowMainMenu();
     }
 }

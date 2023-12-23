@@ -1,8 +1,8 @@
-﻿namespace AdressBookConsole.Interfaces
+﻿namespace SharedCode
 {
     public interface IServiceProvider
     {
-        IMenuService GetMenuService();
+        
         IContactRepository GetContactRepository();
         IFileService GetFileService();
     }

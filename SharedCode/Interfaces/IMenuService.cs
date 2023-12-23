@@ -1,4 +1,4 @@
-﻿namespace AdressBookConsole.Interfaces
+﻿namespace SharedCode
 {
     public interface IMenuService
     {

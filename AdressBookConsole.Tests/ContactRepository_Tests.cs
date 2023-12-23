@@ -1,9 +1,7 @@
-﻿using AdressBookConsole.Interfaces;
-using AdressBookConsole.Models;
-using AdressBookConsole.Services;
-using Moq;
+﻿using Moq;
 using Xunit;
-
+using SharedCode;
+using SharedCode.Models;
 namespace AddressBookTests
 {
     public class ContactRepositoryTests

@@ -1,4 +1,4 @@
-﻿namespace AdressBookConsole.Models
+﻿namespace SharedCode.Models
 {
     public class Contact
     {
