@@ -1,24 +1,23 @@
-﻿using System.Text;
+﻿using AddressBookWPF.ViewModels;
+using SharedCode;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace AdressBookWPF
+namespace AddressBookWPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            string jsonFilePath = @"C:\Projects\contacts.json";
+            IFileService fileService = new FileService(jsonFilePath);
+            IContactRepository contactRepository = new ContactRepository(fileService);
+            DataContext = new MainViewModel(contactRepository);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
